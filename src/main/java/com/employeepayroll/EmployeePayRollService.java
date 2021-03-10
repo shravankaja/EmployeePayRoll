@@ -5,7 +5,7 @@ import java.nio.file.*;
 import java.util.*;
 
 public class EmployeePayRollService {
-
+    public int noOfEntries;
     private ArrayList<EmployeeData> employeeDataArrayList;
 
     public EmployeePayRollService(ArrayList<EmployeeData> employeeDataArrayList) {
@@ -31,6 +31,7 @@ public class EmployeePayRollService {
         employeePayRollService.writeEmployeeDataToConsole();
         employeePayRollService.writeEmployeeDataToFile();
         employeePayRollService.readEmployeeDataFromFile();
+        employeePayRollService.numberOfEntries();
     }
 
     public void writeEmployeeDataToConsole() {
@@ -69,6 +70,7 @@ public class EmployeePayRollService {
                 }
             }
         }
+
         return numberOfEntries;
     }
 
@@ -103,6 +105,12 @@ public class EmployeePayRollService {
                 myReader.close();
             }
         }
+        noOfEntries=count+1;
         return numberOfEntries = count + 1;
     }
+    public void numberOfEntries() {
+        System.out.println("Total No of records : "+noOfEntries);
+    }
+
+
 }
